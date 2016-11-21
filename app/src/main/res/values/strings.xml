@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Maps</string>
     <string name="api_key_string">@string/api_key</string>
+
     <string name="map">Map</string>
     <string name="satellite">Satellite</string>
     <string name="hybrid">Hybrid</string>
+    <string name="animate_maps">Animate Maps</string>
+
+    <string name="london">London</string>
+    <string name="los_angeles">LA</string>
+    <string name="new_york">New York</string>
 </resources>
