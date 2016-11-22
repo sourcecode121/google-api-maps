@@ -10,4 +10,5 @@
     <string name="london">London</string>
     <string name="los_angeles">LA</string>
     <string name="new_york">New York</string>
+    <string name="street_view">Street View</string>
 </resources>

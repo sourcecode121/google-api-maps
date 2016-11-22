@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         Button button1 = (Button) findViewById(R.id.button1);
         Button button2 = (Button) findViewById(R.id.button2);
         Button button3 = (Button) findViewById(R.id.button3);
+        Button streetView = (Button) findViewById(R.id.street_view_button);
         Button animateMaps = (Button) findViewById(R.id.animate_maps_button);
 
         button1.setText(R.string.map);
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        streetView.setVisibility(View.VISIBLE);
+        streetView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, StreetViewActivity.class));
+            }
+        });
+
         animateMaps.setVisibility(View.VISIBLE);
         animateMaps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +77,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
         mapReady = true;
-        LatLng landmark = new LatLng(37.4220041, -122.0862462);
         CameraPosition cameraPosition = CameraPosition.builder()
-                                                    .target(landmark)
+                                                    .target(Constants.GOOGLE)
                                                     .zoom(17)
                                                     .build();
         this.googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
